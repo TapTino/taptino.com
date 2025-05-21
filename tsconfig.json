@@ -29,9 +29,9 @@
     "module": "ES2022",
     "lib": ["ES2022", "dom"],
     "paths": {
-      "~cn/core/*": ["app/core/*"],
-      "~cn/feature/*": ["app/feature/*"],
-      "~cn/shared/*": ["app/shared/*"]
+      "~tpt/core/*": ["app/core/*"],
+      "~tpt/feature/*": ["app/feature/*"],
+      "~tpt/shared/*": ["app/shared/*"]
     }
   },
   "angularCompilerOptions": {
