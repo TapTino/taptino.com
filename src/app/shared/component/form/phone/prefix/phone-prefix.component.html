@@ -1,0 +1,15 @@
+<!-- If clauses currently need to have no whitespaces inside them to correctly project mat elements into their proper slot. -->
+<mat-form-field appearance="outline" floatLabel="auto">
+  <mat-label>{{ label }}</mat-label>
+  <input #inputElement autocomplete="off" charFilter matInput [disabled]="isDisabled" [errorStateMatcher]="errorMatcher" [matAutocomplete]="auto" [maxLength]="3" [required]="isRequired" [(ngModel)]="value" (blur)="blur()" (input)="input()" />
+  <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption>
+    @for (country of test; track country) {
+      <mat-option [value]="country" (onSelectionChange)="onCountryPicked(country)">
+        <mat-icon [svgIcon]="country.iso2"></mat-icon>
+        {{ country.name }} ({{ country.code }})
+      </mat-option>
+    }
+  </mat-autocomplete>
+  @if (hint) {<mat-hint>{{ hint }}</mat-hint>}
+  @if (invalid) {<mat-error>{{ errorMessage }}</mat-error>}
+</mat-form-field>

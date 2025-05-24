@@ -1,0 +1,27 @@
+.mat-mdc-form-field {
+  width: 100% !important;
+}
+
+.mat-mdc-form-field-infix {
+  display: flex !important;
+  align-items: center !important;
+  width: 10.5rem !important;
+}
+
+.mat-mdc-form-field-icon-prefix > .mat-icon,
+.mat-mdc-form-field-icon-suffix > .mat-icon {
+  height: 1rem;
+  width: 1rem;
+  font-size: 1rem;
+  transition-duration: 0.2s;
+  cursor: pointer;
+
+  &:active {
+    scale: 0.95;
+  }
+}
+
+:root {
+  --mat-form-field-container-height: 3rem;
+  --mat-form-field-container-vertical-padding: 0.75rem;
+}

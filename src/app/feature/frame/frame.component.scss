@@ -1,0 +1,15 @@
+@import "variables";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .tpt-main-content {
+    min-height: calc(100vh - $header-height);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}

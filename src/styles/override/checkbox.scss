@@ -1,0 +1,18 @@
+@import "variables";
+
+.mdc-checkbox__ripple {
+  display: none !important;
+}
+
+.mdc-checkbox .mdc-checkbox__native-control:enabled:focus:focus:not(:checked):not(:indeterminate) ~ .mdc-checkbox__background,
+.mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate) ~ .mdc-checkbox__background {
+  border-color: $tpt-color-400 !important;
+}
+
+.mdc-form-field:has(.mdc-checkbox) {
+  color: $tpt-color-400 !important;
+
+  &:hover {
+    filter: $hover-filter !important;
+  }
+}

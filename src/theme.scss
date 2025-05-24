@@ -1,0 +1,72 @@
+@use "@angular/material" as material;
+@import "variables";
+
+@include material.core();
+
+$tpt-color-palette: (
+  50: $tpt-color-50,
+  100: $tpt-color-100,
+  200: $tpt-color-200,
+  300: $tpt-color-300,
+  400: $tpt-color-400,
+  500: $tpt-color-500,
+  600: $tpt-color-600,
+  700: $tpt-color-700,
+  800: $tpt-color-800,
+  900: $tpt-color-900,
+  contrast: (
+    50: $tpt-color-a50,
+    100: $tpt-color-a100,
+    200: $tpt-color-a200,
+    300: $tpt-color-a300,
+    400: $tpt-color-a400,
+    500: $tpt-color-a500,
+    600: $tpt-color-a600,
+    700: $tpt-color-a700,
+    800: $tpt-color-a800,
+    900: $tpt-color-a900,
+  ),
+);
+
+$primary-palette: material.define-palette($tpt-color-palette);
+$accent-palette: material.define-palette($tpt-color-palette);
+$warn-palette: material.define-palette(material.$red-palette);
+
+$tpt-dark-theme: material.define-dark-theme(
+  (
+    color: (
+      primary: $primary-palette,
+      accent: $accent-palette,
+      warn: $warn-palette,
+    ),
+    typography: material.define-typography-config(
+        $font-family: "Lexend",
+      ),
+    density: 0,
+  )
+);
+
+:root {
+  color-scheme: dark;
+  @include material.core-theme($tpt-dark-theme);
+  @include material.sidenav-theme($tpt-dark-theme);
+  @include material.icon-theme($tpt-dark-theme);
+  @include material.button-theme($tpt-dark-theme);
+  @include material.fab-theme($tpt-dark-theme);
+  @include material.form-field-theme($tpt-dark-theme);
+  @include material.stepper-theme($tpt-dark-theme);
+  @include material.checkbox-theme($tpt-dark-theme);
+  @include material.slide-toggle-theme($tpt-dark-theme);
+  @include material.input-theme($tpt-dark-theme);
+  @include material.select-theme($tpt-dark-theme);
+  @include material.progress-bar-theme($tpt-dark-theme);
+  @include material.card-theme($tpt-dark-theme);
+  @include material.menu-theme($tpt-dark-theme);
+  @include material.divider-theme($tpt-dark-theme);
+  @include material.snack-bar-theme($tpt-dark-theme);
+  --mdc-elevated-card-container-color: #202020;
+  --mat-stepper-container-color: #202020;
+  --mat-select-panel-background-color: #2b2b2b;
+  --mat-menu-container-color: #1e1b33;
+  --mdc-form-field-label-text-color: #e3e3e3;
+}

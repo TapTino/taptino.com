@@ -1,0 +1,5 @@
+@import "variables";
+
+.mdc-button:hover {
+  filter: $hover-filter !important;
+}

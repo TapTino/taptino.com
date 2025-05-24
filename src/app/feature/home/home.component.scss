@@ -1,0 +1,95 @@
+@import "variables";
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  > section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 4rem;
+    padding-top: 0;
+    min-width: $mobile;
+    width: 120rem;
+    max-width: 120rem;
+
+    > .tpt-main-section {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      > .title {
+        font-size: 12rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-color: $tpt-color-300;
+        background-image: linear-gradient(180deg, #e87e0c 50%, #e3e3e3 100%); //linear-gradient(180deg, $tpt-color-300 50%, $tpt-color-600 100%);
+        background-size: 100%;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        color: transparent;
+      }
+    }
+
+    > .tpt-sub-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      width: 100%;
+
+      > div:first-child {
+        width: 100%;
+      }
+
+      > div:not(:first-child) {
+        width: 100%;
+
+        > div {
+          background-color: #e87e0c;
+          min-height: 8rem;
+        }
+      }
+    }
+
+    .tpt-content {
+      padding: 2rem;
+      max-width: 50%;
+
+      > img {
+        height: 14rem;
+        margin-bottom: 1rem;
+      }
+
+      > span {
+        text-align: center;
+      }
+
+      > .title {
+        font-size: 6rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-color: $tpt-color-300;
+        background-image: linear-gradient(180deg, $tpt-color-300 50%, $tpt-color-600 100%);
+        background-size: 100%;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        color: transparent;
+      }
+
+      > .subtitle {
+        font-size: 2rem;
+        font-weight: 400;
+        color: $tpt-color-400;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

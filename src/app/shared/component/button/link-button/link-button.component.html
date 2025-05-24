@@ -1,0 +1,19 @@
+@if (link.startsWith("http")) {
+  <a target="_blank" [href]="disabled ? '#' : link">
+    @if (icon) {
+      <img [src]="icon" />
+    }
+    @if (text) {
+      <span>{{ text }}</span>
+    }
+  </a>
+} @else {
+  <a [routerLink]="disabled ? null : link">
+    @if (icon) {
+      <img [src]="icon" />
+    }
+    @if (text) {
+      <span>{{ text }}</span>
+    }
+  </a>
+}

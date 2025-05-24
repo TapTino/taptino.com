@@ -1,0 +1,6 @@
+<tpt-loader [loading]="loading$ | async" [progress]="progress$ | async" [progressMode]="loadingType$ | async" />
+<tpt-header [activeRoute]="activeRoute" />
+<main class="tpt-main-content">
+  <ng-content></ng-content>
+</main>
+<tpt-footer />

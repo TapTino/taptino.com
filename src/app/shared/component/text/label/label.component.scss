@@ -1,0 +1,32 @@
+@import "variables";
+
+:host {
+  display: flex;
+  gap: $label-gap;
+  align-items: center;
+
+  > span {
+    white-space: nowrap;
+  }
+
+  > div {
+    display: flex;
+    gap: $label-gap;
+    flex-wrap: wrap;
+
+    > span {
+      display: flex;
+      gap: $label-gap;
+      align-items: center;
+
+      > mat-icon {
+        width: $label-icon-size;
+        height: $label-icon-size;
+      }
+
+      > strong {
+        white-space: nowrap;
+      }
+    }
+  }
+}
