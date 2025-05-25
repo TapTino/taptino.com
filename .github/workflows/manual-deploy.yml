@@ -1,5 +1,8 @@
 name: Manual Deploy
 
+permissions:
+  contents: write
+
 on:
   workflow_dispatch:
 
