@@ -39,8 +39,8 @@ import {TextareaComponent} from '~tpt/shared/component/form/textarea/textarea.co
 })
 export class ContactFormComponent extends FormComponent<ContactForm> {
   public readonly interests: Record<Interest, string> = {
-    buy: 'I\'d like to buy TapTino when available!',
-    work: 'I\'d like to join the team!'
+    buy: 'Vorrei richiedere una demo!',
+    work: 'Vorrei entrare a far parte del team!'
   };
 
   /**
