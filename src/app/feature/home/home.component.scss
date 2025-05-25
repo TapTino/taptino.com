@@ -26,6 +26,7 @@
     min-width: $mobile;
     width: 120rem;
     max-width: 120rem;
+    gap: 2rem;
 
     > .tpt-landing-section {
       display: flex;
@@ -60,8 +61,8 @@
           position: absolute;
           top: 0.5rem;
           left: 0.5rem;
-          width: max(10vmax, 10rem);
-          height: max(10vmax, 10rem);
+          width: max(10vmax, 8rem);
+          height: max(10vmax, 8rem);
           display: flex;
           justify-content: center;
           align-items: center;
@@ -86,7 +87,7 @@
             transform: translate(-50%, -50%);
             color: #1a1a1a;
             text-align: center;
-            font-size: max(1.15vmax, 1.15rem);
+            font-size: max(1vmax, 1rem);
             font-weight: 700;
             line-height: 1.2;
             user-select: none;
@@ -94,7 +95,7 @@
         }
       }
 
-      .scroll-arrow {
+      > .scroll-arrow {
         position: absolute;
         right: 2rem;
         bottom: 2rem;
@@ -210,7 +211,8 @@
 
         > .title {
           font-size: max(5vmax, 4rem);
-          font-weight: 400;
+          font-weight: $font-weight;
+          display: block;
         }
 
         > span:not(:first-child) {
@@ -225,7 +227,7 @@
 
         > .title {
           font-size: max(1vmax, 1rem);
-          font-weight: 400;
+          font-weight: $font-weight;
           display: block;
           text-align: center;
           width: 100%;
@@ -236,8 +238,71 @@
 
   @media (max-width: $desktop-large) {
     > section {
-      > .tpt-landing-section > .exposition {
-        background-position: top;
+      > .tpt-landing-section {
+        height: calc(77.5vw - $header-height);
+
+        > .title {
+          margin-bottom: 1rem;
+        }
+
+        > .exposition {
+          background-position: top;
+        }
+
+        > .scroll-arrow {
+          display: none;
+        }
+      }
+
+      > .tpt-strengths-section {
+        margin-bottom: 0;
+      }
+
+      > .tpt-contacts-section {
+        display: flex;
+        flex-direction: column;
+
+        > div {
+          width: 100%;
+
+          &:first-child {
+            padding: 2rem;
+            padding-top: 0;
+          }
+
+          &:last-child {
+            padding: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $desktop) {
+    > section {
+      > .tpt-landing-section > .title {
+        font-size: 20vw;
+        text-align: center;
+      }
+
+      > .tpt-strengths-section {
+        gap: 0.5rem;
+
+        > div {
+          width: 32%;
+
+          > span {
+            font-size: 1.5rem;
+          }
+
+          &:nth-child(2) > img {
+            width: 120%;
+          }
+        }
+      }
+
+      > .tpt-contacts-section > div:last-child {
+        padding: 0 2rem;
       }
     }
   }
