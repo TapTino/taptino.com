@@ -1,6 +1,6 @@
 import {CommonModule} from '@angular/common';
 import {Component} from '@angular/core';
-import {FormControl, ReactiveFormsModule, Validators} from '@angular/forms';
+import {FormControl, ReactiveFormsModule, ValidationErrors, Validators} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 
 import {SelectComponent} from '../../../../shared/component/form/select/select.component';
@@ -38,10 +38,31 @@ import {TextareaComponent} from '~tpt/shared/component/form/textarea/textarea.co
   styleUrl: './contact-form.component.scss'
 })
 export class ContactFormComponent extends FormComponent<ContactForm> {
+  /**
+   * Available interests people can show in the product.
+   *
+   * @public
+   * @readonly
+   * @type {Record<Interest, string>}
+   */
   public readonly interests: Record<Interest, string> = {
     buy: 'Vorrei richiedere una demo!',
     work: 'Vorrei entrare a far parte del team!'
   };
+
+  /**
+   * Error parser for email errors.
+   *
+   * @public
+   * @param {ValidationErrors} errors validation errors.
+   * @returns {string | null} parsed error.
+   */
+  public emailErrorsParser(errors: ValidationErrors): string | null {
+    if ('email' in errors) {
+      return 'Indirizzo email non valido';
+    }
+    return null;
+  }
 
   /**
    * @inheritdoc

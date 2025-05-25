@@ -3,7 +3,7 @@
     <tpt-input class="tpt-cell-6" formControlName="name" label="Nome *" />
     <tpt-input class="tpt-cell-6" formControlName="surname" label="Cognome *" />
     <tpt-input class="tpt-cell-12" formControlName="profession" label="Professione *" />
-    <tpt-input class="tpt-cell-12" formControlName="email" label="Email *" />
+    <tpt-input class="tpt-cell-12" formControlName="email" label="Email *" [errorParser]="emailErrorsParser" />
     <tpt-select class="tpt-cell-12" formControlName="interest" label="Interesse *" [options]="interests" />
     <tpt-textarea class="tpt-cell-12" formControlName="message" label="Messaggio libero" [minRows]="10" />
   </div>

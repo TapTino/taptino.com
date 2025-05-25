@@ -1,5 +1,5 @@
 import {Directive, OnInit, Input, ChangeDetectorRef, AfterViewInit} from '@angular/core';
-import {AbstractControl, ControlValueAccessor, FormGroupDirective, NgControl, NgForm} from '@angular/forms';
+import {AbstractControl, ControlValueAccessor, FormGroupDirective, NgControl, NgForm, ValidationErrors} from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 
 /**
@@ -136,7 +136,7 @@ export abstract class TptControlValueAccessor<T> implements ControlValueAccessor
       if (!this.formControl || this.formControl.hasError('required')) {
         return 'Campo obbligatorio';
       }
-      return 'Valore non valido';
+      return this.errorParser(this.formControl.errors!) ?? 'Valore non valido';
     }
     return '';
   }
@@ -150,6 +150,14 @@ export abstract class TptControlValueAccessor<T> implements ControlValueAccessor
   public constructor(private readonly ngControl: NgControl, protected readonly cdr: ChangeDetectorRef) {
     this.ngControl.valueAccessor = this;
   }
+
+  /**
+   * Parser to get a human-readable string form control errors.
+   *
+   * @returns {string | null} 
+   */
+  @Input()
+  public errorParser: (errors: ValidationErrors) => string | null = () => null;
 
   /**
    * @inheritdoc
