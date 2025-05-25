@@ -49,12 +49,10 @@ $tpt-light-theme: material.define-light-theme(
 :root {
   color-scheme: light;
   @include material.core-theme($tpt-light-theme);
-  @include material.sidenav-theme($tpt-light-theme);
   @include material.icon-theme($tpt-light-theme);
   @include material.button-theme($tpt-light-theme);
   @include material.fab-theme($tpt-light-theme);
   @include material.form-field-theme($tpt-light-theme);
-  @include material.stepper-theme($tpt-light-theme);
   @include material.checkbox-theme($tpt-light-theme);
   @include material.slide-toggle-theme($tpt-light-theme);
   @include material.input-theme($tpt-light-theme);
@@ -64,10 +62,8 @@ $tpt-light-theme: material.define-light-theme(
   @include material.menu-theme($tpt-light-theme);
   @include material.divider-theme($tpt-light-theme);
   @include material.snack-bar-theme($tpt-light-theme);
-  --mat-select-panel-background-color: #fafafa;
+  --mat-select-panel-background-color: #f9f9f9;
   // --mdc-protected-button-label-text-color: #fafafa;
   --mdc-elevated-card-container-color: #202020;
-  --mat-stepper-container-color: #202020;
   --mat-menu-container-color: #1e1b33;
-  --mdc-form-field-label-text-color: #e3e3e3;
 }

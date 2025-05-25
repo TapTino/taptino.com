@@ -78,7 +78,7 @@ export abstract class TptControlValueAccessor<T> implements ControlValueAccessor
    * @type {string}
    */
   @Input()
-  public hint = '';
+  public hint = ' ';
 
   /**
    * Custom error matcher.
@@ -134,9 +134,9 @@ export abstract class TptControlValueAccessor<T> implements ControlValueAccessor
   public get errorMessage(): string {
     if (this.invalid) {
       if (!this.formControl || this.formControl.hasError('required')) {
-        return 'Field is required';
+        return 'Campo obbligatorio';
       }
-      return 'Field is invalid';
+      return 'Valore non valido';
     }
     return '';
   }
