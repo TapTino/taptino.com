@@ -1,0 +1,13 @@
+<form [formGroup]="form">
+  <div class="tpt-grid">
+    <tpt-input class="tpt-cell-6" formControlName="name" label="Nome *" />
+    <tpt-input class="tpt-cell-6" formControlName="surname" label="Cognome *" />
+    <tpt-input class="tpt-cell-12" formControlName="profession" label="Professione *" />
+    <tpt-input class="tpt-cell-12" formControlName="email" label="Email *" />
+    <tpt-select class="tpt-cell-12" formControlName="interest" label="Interesse *" [options]="interests" />
+    <tpt-textarea class="tpt-cell-12" formControlName="message" label="Messaggio libero" [minRows]="10" />
+  </div>
+  <div class="tpt-grid form-footer">
+    <tpt-button class="tpt-cell-12 align-self-center" icon="send" label="Submit" [isDisabled]="!validity" (click)="emitSubmit()" />
+  </div>
+</form>

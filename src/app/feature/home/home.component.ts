@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {RouterModule} from '@angular/router';
 
-import {ContactFormComponent} from './contact/contact-form/contact-form.component';
+import {ContactFormComponent} from './component/contact-form/contact-form.component';
 import {ContactForm} from './model/contact-form.interface';
 
 /**

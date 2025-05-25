@@ -2,7 +2,9 @@
   "name": "taptino",
   "version": "1.0.0",
   "author": "Riccardo Chimisso",
-  "contributors": [],
+  "contributors": [
+    "Anna Lambiase"
+  ],
   "description": "TapTino website",
   "license": "GPL-3.0-or-later",
   "homepage": "https://github.com/TapTino/taptino.com",
