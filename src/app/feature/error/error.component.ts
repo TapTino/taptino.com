@@ -47,8 +47,9 @@ export class ErrorComponent {
    */
   public openIssue() {
     this.store$.dispatch(openIssue({
-      title: '404 navigation error',
-      body: `\`\`\`json\n${JSON.stringify({route: this.route}, null, 2)}\n\`\`\``
+      title: 'Errore 404 durante la navigazione',
+      // eslint-disable-next-line max-len
+      body: `Buongiorno,\n\nStavo cercando di visitare la pagina https://taptino.com/#/${this.route}, ma viene invece mostrata la pagina di 404.\n\nHo trovato il link della pagina/ho raggiunto la pagina tramite: ___\nLe informazioni che stavo cercando in quella pagina sono: ___\nInformazioni aggiuntive: ___\n\nGrazie per il vostro tempo`
     }));
   }
 }

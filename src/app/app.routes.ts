@@ -1,6 +1,9 @@
 import {Routes} from '@angular/router';
+import {provideEffects} from '@ngrx/effects';
 
 import {ROUTE} from './core/model/route.enum';
+import {HomeEffects} from './feature/home/redux/effects';
+import {ContactService} from './feature/home/service/contact.service';
 
 /**
  * Application routes.
@@ -10,12 +13,12 @@ import {ROUTE} from './core/model/route.enum';
 export const ROOT_ROUTES: Routes = [
   {
     path: ROUTE.HOME,
-    loadComponent: () => import('~tpt/feature/home/home.component').then(m => m.HomeComponent)
+    loadComponent: () => import('~tpt/feature/home/home.component').then(m => m.HomeComponent),
+    providers: [provideEffects(HomeEffects), ContactService]
   },
   {
     path: ROUTE.NEWSLETTER,
-    loadComponent: () => import('~tpt/feature/news/news.component').then(m => m.NewsletterComponent),
-    providers: []
+    loadComponent: () => import('~tpt/feature/news/news.component').then(m => m.NewsletterComponent)
   },
   {
     path: '**',

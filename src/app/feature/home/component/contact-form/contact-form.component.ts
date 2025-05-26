@@ -47,8 +47,8 @@ export class ContactFormComponent extends FormComponent<ContactForm> {
    * @type {Record<Interest, string>}
    */
   public readonly interests: Record<Interest, string> = {
-    buy: 'Vorrei richiedere una demo!',
-    work: 'Vorrei entrare a far parte del team!'
+    demo: 'Vorrei richiedere una demo!',
+    lavoro: 'Vorrei entrare a far parte del team!'
   };
 
   /**

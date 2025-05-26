@@ -4,4 +4,4 @@
  * @export
  * @typedef {Interest}
  */
-export type Interest = 'work' | 'buy';
+export type Interest = 'lavoro' | 'demo';

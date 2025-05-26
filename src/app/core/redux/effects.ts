@@ -39,23 +39,11 @@ export class CoreEffects {
   public readonly openIssue$ = createEffect(() => this.actions$.pipe(
     ofType(openIssue),
     tap(({title, body}) => window.open(
-      `https://github.com/Crystal-Nest/crystalnest.it/issues/new?assignees=Crystal-Spider&labels=bug%2Cmedium+priority&projects=&title=${encodeURIComponent(title)}&error=${encodeURIComponent(body)}&os=${this.deviceInfo}&template=error_report.yml`,
+      `mailto:info@taptino.com?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`,
       '_blank'
     )),
     ignoreElements()
   ), {dispatch: false});
-
-  /**
-   * Device information.
-   *
-   * @private
-   * @readonly
-   * @type {string}
-   */
-  private get deviceInfo() {
-    const {os, osVersion, browser, browserMajorVersion} = this.deviceInformationService.getDeviceInfo();
-    return encodeURIComponent(`${this.deviceInformationService.getDeviceType()} - ${os} ${osVersion}, ${browser} ${browserMajorVersion}`);
-  }
 
   /**
    * @constructor

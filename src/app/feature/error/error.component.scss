@@ -10,16 +10,26 @@
   padding: 3rem;
 
   > span {
-    max-width: 40rem;
+    max-width: $desktop-tiny;
     text-align: center;
     line-height: 1.5rem;
-    color: $tpt-color-400;
+    color: #6571a8;
 
     &.error-code {
       font-size: 14rem;
       line-height: 13rem;
       padding: 0;
-      opacity: 0.25;
+      font-weight: 600;
+      color: #fff;
+      text-shadow:
+        -4px -4px 0 #e87e0c,
+        4px -4px 0 #e87e0c,
+        -4px 4px 0 #e87e0c,
+        4px 4px 0 #e87e0c,
+        0px -4px 0 #e87e0c,
+        0px 4px 0 #e87e0c,
+        -4px 0px 0 #e87e0c,
+        4px 0px 0 #e87e0c;
 
       @media (max-width: $mobile) {
         font-size: 10rem;
