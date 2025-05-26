@@ -143,12 +143,8 @@
         @media (max-width: $mobile-small) {
           &.navigation > li {
             &:first-child {
-              height: 2.5rem;
-              margin-left: auto;
-
               > :first-child {
                 display: inline;
-                font-size: 1.5rem;
                 margin-right: 1rem;
               }
 

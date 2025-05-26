@@ -33,6 +33,7 @@
       flex-direction: column;
       width: 100%;
       height: calc(100vh - $header-height);
+      min-height: 16rem;
 
       > .title {
         font-size: max(10vmax, 12rem);
@@ -233,10 +234,8 @@
         }
       }
     }
-  }
 
-  @media (max-width: $desktop-large) {
-    > section {
+    @media (max-width: $desktop-large) {
       > .tpt-landing-section {
         height: calc(77.5vw - $header-height);
 
@@ -275,10 +274,8 @@
         }
       }
     }
-  }
 
-  @media (max-width: $desktop) {
-    > section {
+    @media (max-width: $desktop) {
       > .tpt-landing-section > .title {
         font-size: 20vw;
         text-align: center;
@@ -304,17 +301,23 @@
         padding: 0 2rem;
       }
     }
-  }
 
-  @media (max-width: $desktop-tiny) {
-    > section {
+    @media (max-width: $desktop-tiny) {
+      min-width: 0;
+      padding: 2rem 0;
+
+      .tpt-landing-section > .exposition > .rosette {
+        left: 2rem;
+      }
+
       > .tpt-strengths-section {
         flex-direction: column;
         gap: 1rem;
+        padding: 2rem;
 
         > div {
-          align-self: flex-start !important;
-          width: 100%;
+          align-self: center !important;
+          width: 90%;
           aspect-ratio: 4;
 
           &:first-child {
@@ -332,6 +335,7 @@
             > img {
               height: 100%;
               transform: translate(-50%, -50%);
+              image-rendering: -webkit-optimize-contrast;
             }
 
             &:hover > img {
@@ -345,6 +349,44 @@
             }
           }
         }
+      }
+
+      > .tpt-contacts-section {
+        padding: 0 2rem;
+      }
+    }
+
+    @media (max-width: $mobile-large) {
+      gap: 1rem;
+
+      > .tpt-landing-section {
+        padding: 0 1rem;
+        > .exposition > .rosette {
+          width: 6rem;
+          height: 6rem;
+
+          > span {
+            font-size: 0.75rem;
+          }
+        }
+      }
+
+      > .tpt-contacts-section {
+        > div:first-child > .title {
+          font-size: 3rem;
+        }
+      }
+    }
+
+    @media (max-width: $mobile) {
+      > .tpt-strengths-section > div > span {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: $mobile-small) {
+      > .tpt-strengths-section {
+        padding-top: 1vw;
       }
     }
   }

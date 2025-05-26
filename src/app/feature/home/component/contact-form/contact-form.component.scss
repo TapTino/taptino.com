@@ -2,12 +2,27 @@
 
 :host {
   form {
-    min-width: $mobile - 4rem - 2rem;
     padding-top: 1rem;
 
     .form-footer {
       padding: 1rem;
       padding-bottom: 0;
+    }
+  }
+
+  @media (max-width: $mobile-large) {
+    .tpt-cell-6 {
+      grid-column-end: span 12;
+    }
+
+    form {
+      .form-footer {
+        padding: 0;
+
+        > tpt-button {
+          width: 100%;
+        }
+      }
     }
   }
 }
