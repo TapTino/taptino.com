@@ -8,6 +8,7 @@ import {Interest} from './interest.type';
  * @typedef {ContactForm}
  */
 export interface ContactForm {
+  recaptcha: string | null;
   /**
    * Name.
    *

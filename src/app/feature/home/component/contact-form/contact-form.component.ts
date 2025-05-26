@@ -1,7 +1,8 @@
 import {CommonModule} from '@angular/common';
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {FormControl, ReactiveFormsModule, ValidationErrors, Validators} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
+import {RecaptchaComponent, RecaptchaFormsModule, RecaptchaModule} from 'ng-recaptcha';
 
 import {SelectComponent} from '../../../../shared/component/form/select/select.component';
 import {ContactValidators} from '../../class/contact-validators.class';
@@ -33,12 +34,17 @@ import {TextareaComponent} from '~tpt/shared/component/form/textarea/textarea.co
     InputComponent,
     ButtonComponent,
     TextareaComponent,
-    SelectComponent
+    SelectComponent,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss'
 })
 export class ContactFormComponent extends FormComponent<ContactForm> {
+  @ViewChild('recaptcha')
+  public recaptcha?: RecaptchaComponent;
+
   /**
    * Available interests people can show in the product.
    *
@@ -66,6 +72,27 @@ export class ContactFormComponent extends FormComponent<ContactForm> {
   }
 
   /**
+   * Verify that the user can submit the form with ReCaptcha.
+   *
+   * @public
+   */
+  public verify(): void {
+    this.recaptcha!.execute();
+  }
+
+  /**
+   * Submit the form only if the response from ReCaptcha was positive.
+   *
+   * @public
+   * @param {string | null} response response from ReCaptcha.
+   */
+  public onResolved(response: string | null) {
+    if (response) {
+      this.emitSubmit();
+    }
+  }
+
+  /**
    * @inheritdoc
    *
    * @protected
@@ -73,6 +100,7 @@ export class ContactFormComponent extends FormComponent<ContactForm> {
    */
   protected override initForm(): FormType<ContactForm> {
     return {
+      recaptcha: new FormControl(null),
       name: new FormControl('', {
         nonNullable: true,
         validators: [Validators.required, ContactValidators.notBlank]

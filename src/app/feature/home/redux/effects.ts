@@ -37,8 +37,8 @@ export class HomeEffects {
   /**
    * @constructor
    * @public
-   * @param {Actions} actions$ 
-   * @param {ContactService} contactService 
+   * @param {Actions} actions$
+   * @param {ContactService} contactService
    */
   public constructor(private readonly actions$: Actions, private readonly contactService: ContactService) {}
 }

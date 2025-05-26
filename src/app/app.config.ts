@@ -10,6 +10,8 @@ import {provideRouter, withInMemoryScrolling} from '@angular/router';
 import {provideEffects} from '@ngrx/effects';
 import {provideState, provideStore} from '@ngrx/store';
 import {AngularDeviceInformationService} from 'angular-device-information';
+import {environment} from 'environments/environment';
+import {RECAPTCHA_SETTINGS, RECAPTCHA_V3_SITE_KEY} from 'ng-recaptcha';
 import {MARKED_OPTIONS, provideMarkdown} from 'ngx-markdown';
 
 import {ROOT_ROUTES} from './app.routes';
@@ -77,6 +79,17 @@ export const appConfig: ApplicationConfig = {
         minPageHeight: 2048,
         minScrollHeight: 384
       }
+    },
+    {
+      provide: RECAPTCHA_SETTINGS,
+      useValue: {
+        siteKey: environment.recaptchaKey,
+        size: 'invisible'
+      }
+    },
+    {
+      provide: RECAPTCHA_V3_SITE_KEY,
+      useValue: environment.recaptchaKey
     },
     {
       provide: HTTP_INTERCEPTORS,

@@ -3,6 +3,7 @@ import {Component} from '@angular/core';
 import {MatIconRegistry} from '@angular/material/icon';
 import {DomSanitizer} from '@angular/platform-browser';
 import {RouterOutlet} from '@angular/router';
+import {RecaptchaV3Module} from 'ng-recaptcha';
 
 import {FrameComponent} from '~tpt/feature/frame/frame.component';
 
@@ -16,7 +17,7 @@ import {FrameComponent} from '~tpt/feature/frame/frame.component';
 @Component({
   selector: 'tpt-root',
   standalone: true,
-  imports: [RouterOutlet, FrameComponent],
+  imports: [RouterOutlet, FrameComponent, RecaptchaV3Module],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

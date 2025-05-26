@@ -6,8 +6,9 @@
     <tpt-input class="tpt-cell-12" formControlName="email" label="Email *" [errorParser]="emailErrorsParser" />
     <tpt-select class="tpt-cell-12" formControlName="interest" label="Interesse *" [options]="interests" />
     <tpt-textarea class="tpt-cell-12" formControlName="message" label="Messaggio libero" [minRows]="10" />
+    <re-captcha #recaptcha formControlName="recaptcha" (resolved)="onResolved($event)" />
   </div>
   <div class="tpt-grid form-footer">
-    <tpt-button class="tpt-cell-12 align-self-center" icon="send" label="Invia" [isDisabled]="!validity" (click)="emitSubmit()" />
+    <tpt-button class="tpt-cell-12 align-self-center" icon="send" label="Invia" [isDisabled]="!validity" (click)="verify()" />
   </div>
 </form>
