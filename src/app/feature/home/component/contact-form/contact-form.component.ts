@@ -4,6 +4,7 @@ import {FormControl, ReactiveFormsModule, ValidationErrors, Validators} from '@a
 import {MatIconModule} from '@angular/material/icon';
 
 import {SelectComponent} from '../../../../shared/component/form/select/select.component';
+import {ContactValidators} from '../../class/contact-validators.class';
 import {ContactForm} from '../../model/contact-form.interface';
 import {Interest} from '../../model/interest.type';
 
@@ -74,15 +75,15 @@ export class ContactFormComponent extends FormComponent<ContactForm> {
     return {
       name: new FormControl('', {
         nonNullable: true,
-        validators: Validators.required
+        validators: [Validators.required, ContactValidators.notBlank]
       }),
       surname: new FormControl('', {
         nonNullable: true,
-        validators: Validators.required
+        validators: [Validators.required, ContactValidators.notBlank]
       }),
       profession: new FormControl('', {
         nonNullable: true,
-        validators: Validators.required
+        validators: [Validators.required, ContactValidators.notBlank]
       }),
       email: new FormControl('', {
         nonNullable: true,
