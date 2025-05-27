@@ -89,6 +89,7 @@ export class ContactFormComponent extends FormComponent<ContactForm> {
   public onResolved(response: string | null) {
     if (response) {
       this.emitSubmit();
+      this.reset();
     }
   }
 
