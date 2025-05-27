@@ -246,10 +246,6 @@
         > .exposition {
           background-position: top;
         }
-
-        > .scroll-arrow {
-          display: none;
-        }
       }
 
       > .tpt-strengths-section {
@@ -276,9 +272,15 @@
     }
 
     @media (max-width: $desktop) {
-      > .tpt-landing-section > .title {
-        font-size: 20vw;
-        text-align: center;
+      > .tpt-landing-section {
+        > .title {
+          font-size: 20vw;
+          text-align: center;
+        }
+
+        > .scroll-arrow {
+          display: none;
+        }
       }
 
       > .tpt-strengths-section {
