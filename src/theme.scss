@@ -58,7 +58,6 @@ $tpt-light-theme: material.define-light-theme(
   @include material.input-theme($tpt-light-theme);
   @include material.select-theme($tpt-light-theme);
   @include material.progress-bar-theme($tpt-light-theme);
-  @include material.card-theme($tpt-light-theme);
   @include material.menu-theme($tpt-light-theme);
   @include material.divider-theme($tpt-light-theme);
   @include material.snack-bar-theme($tpt-light-theme);

@@ -1,4 +1,3 @@
-import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {ApplicationConfig, importProvidersFrom} from '@angular/core';
@@ -9,10 +8,8 @@ import {provideAnimationsAsync} from '@angular/platform-browser/animations/async
 import {provideRouter, withInMemoryScrolling} from '@angular/router';
 import {provideEffects} from '@ngrx/effects';
 import {provideState, provideStore} from '@ngrx/store';
-import {AngularDeviceInformationService} from 'angular-device-information';
 import {environment} from 'environments/environment';
 import {RECAPTCHA_SETTINGS, RECAPTCHA_V3_SITE_KEY} from 'ng-recaptcha';
-import {MARKED_OPTIONS, provideMarkdown} from 'ngx-markdown';
 
 import {ROOT_ROUTES} from './app.routes';
 import {CoreEffects} from './core/redux/effects';
@@ -35,17 +32,7 @@ export const appConfig: ApplicationConfig = {
       scrollPositionRestoration: 'top',
       anchorScrolling: 'enabled'
     })),
-    AngularDeviceInformationService,
     provideAnimationsAsync(),
-    provideMarkdown({
-      markedOptions: {
-        provide: MARKED_OPTIONS,
-        useValue: {
-          gfm: true,
-          breaks: false
-        }
-      }
-    }),
     {
       provide: MAT_RIPPLE_GLOBAL_OPTIONS,
       useValue: {
@@ -59,10 +46,6 @@ export const appConfig: ApplicationConfig = {
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: {subscriptSizing: 'dynamic'}
-    },
-    {
-      provide: STEPPER_GLOBAL_OPTIONS,
-      useValue: {showError: true}
     },
     {
       provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,

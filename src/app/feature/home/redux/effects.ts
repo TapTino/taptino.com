@@ -31,10 +31,7 @@ export class HomeEffects {
       ...data,
       timestamp: new Date()
     }).pipe(
-      map(response => {
-        console.log(response);
-        return saveContactPostResult({contactPostResult: !!response});
-      }),
+      map(response => saveContactPostResult({contactPostResult: response.message === 'Data saved'})),
       catchError(() => of(saveContactPostResult({contactPostResult: false})))
     ))
   ));

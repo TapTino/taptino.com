@@ -112,7 +112,7 @@ export class FrameComponent extends SubscriberComponent {
         this.title.setTitle('Newsletter - TapTino');
         break;
       default:
-        this.title.setTitle('Not found - TapTino');
+        this.title.setTitle('404 - TapTino');
         break;
     }
     this.activeRoute = isValidRoute(route) ? route as ROUTE : ROUTE.HOME;

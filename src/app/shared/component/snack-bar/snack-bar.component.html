@@ -3,8 +3,8 @@
   <div class="text">
     <span class="title" matSnackBarLabel>Errore di rete</span>
     <span class="message" matSnackBarLabel>{{ data.status }} - {{ data.statusText }}</span>
-    @if (checkDisplayError(data.error)) {
-      <span class="error" matSnackBarLabel>{{ data.error }}</span>
+    @if (data.error?.message) {
+      <span class="error" matSnackBarLabel>{{ data.error.message }}</span>
     }
   </div>
   <button class="close" mat-button matSnackBarAction (click)="snackBarRef.dismiss()"><mat-icon fontIcon="close" /></button>
