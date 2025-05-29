@@ -93,7 +93,7 @@ export class FrameComponent extends SubscriberComponent {
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(event => this.setTitle((event as NavigationEnd).urlAfterRedirects.slice(1).split('#')[0]!));
     this.error$.pipe(filter(error => !!error), this.takeUntil()).subscribe(error => this.snackBar.openFromComponent(SnackBarComponent, {data: error}).onAction().pipe(this.takeUntil()).subscribe(() => this.store$.dispatch(openIssue({
       title: `${error!.status} HTTP error`,
-      body: `\`\`\`json\n${JSON.stringify(error, null, 2)}\n\`\`\``
+      body: `Buongiorno,\n\nSi è presentato il seguente errore:\n\`\`\`json\n${JSON.stringify(error, null, 2)}\n\`\`\`\nQuesto errore si è verificato quando ___\n\nGrazie per il vostro tempo`
     }))));
   }
 
