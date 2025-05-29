@@ -7,6 +7,15 @@
     .form-footer {
       padding: 1rem;
       padding-bottom: 0;
+
+      > span {
+        text-align: center;
+        color: $tpt-color-error;
+
+        &.positive-result {
+          color: #17ae28;
+        }
+      }
     }
   }
 

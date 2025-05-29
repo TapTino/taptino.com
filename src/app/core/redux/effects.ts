@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {Store} from '@ngrx/store';
-import {AngularDeviceInformationService} from 'angular-device-information';
 import {ignoreElements, tap} from 'rxjs';
 
 import {download, openIssue} from './actions';
@@ -50,9 +49,8 @@ export class CoreEffects {
    * @public
    * @param {Actions} actions$
    * @param {Store<State>} store$
-   * @param {AngularDeviceInformationService} deviceInformationService
    */
-  public constructor(private readonly actions$: Actions, private readonly store$: Store<State>, private readonly deviceInformationService: AngularDeviceInformationService) {}
+  public constructor(private readonly actions$: Actions, private readonly store$: Store<State>) {}
 
   /**
    * Downloads the given `file`.

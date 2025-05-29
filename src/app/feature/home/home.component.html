@@ -38,7 +38,7 @@
     </div>
     <div class="tpt-cell-6">
       <span class="title">Contattaci se sei interessato a collaborare con noi o richiedere una demo!</span>
-      <tpt-contact-form (onSubmit)="handleSubmit($event)" />
+      <tpt-contact-form [submitResult]="contactPostResult$ | async" (onSubmit)="handleSubmit($event)" />
     </div>
   </section>
 </section>

@@ -5,10 +5,19 @@
     <tpt-input class="tpt-cell-12" formControlName="profession" label="Professione *" />
     <tpt-input class="tpt-cell-12" formControlName="email" label="Email *" [errorParser]="emailErrorsParser" />
     <tpt-select class="tpt-cell-12" formControlName="interest" label="Interesse *" [options]="interests" />
-    <tpt-textarea class="tpt-cell-12" formControlName="message" label="Messaggio libero" [minRows]="10" />
+    <tpt-textarea class="tpt-cell-12" formControlName="message" label="Messaggio libero" [hint]="submitResult === null ? ' ' : ''" [minRows]="10" />
     <re-captcha #recaptcha formControlName="recaptcha" (resolved)="onResolved($event)" />
   </div>
   <div class="tpt-grid form-footer">
+    @if (submitResult !== null) {
+      <span class="tpt-cell-12 align-self-center" [class.positive-result]="submitResult">
+        @if (submitResult) {
+          Grazie per la tua partecipazione!
+        } @else {
+          Qualcosa è andato storto, riprova.
+        }
+      </span>
+    }
     <tpt-button class="tpt-cell-12 align-self-center" icon="send" label="Invia" [isDisabled]="!validity" (click)="verify()" />
   </div>
 </form>

@@ -30,6 +30,11 @@ export interface State {
    * @type {number}
    */
   progress: number;
+  /**
+   * Latest HTTP error.
+   *
+   * @type {HttpErrorResponse | null}
+   */
   error: HttpErrorResponse | null;
 }
 

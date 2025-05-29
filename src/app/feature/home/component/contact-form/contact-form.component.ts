@@ -1,5 +1,5 @@
 import {CommonModule} from '@angular/common';
-import {Component, ViewChild} from '@angular/core';
+import {Component, Input, OnChanges, ViewChild} from '@angular/core';
 import {FormControl, ReactiveFormsModule, ValidationErrors, Validators} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {RecaptchaComponent, RecaptchaFormsModule, RecaptchaModule} from 'ng-recaptcha';
@@ -11,6 +11,7 @@ import {Interest} from '../../model/interest.type';
 
 import {FormComponent} from '~tpt/core/abstract/form-component';
 import {FormType} from '~tpt/core/model/form-type.type';
+import {TypedChanges} from '~tpt/core/model/typed-changes.type';
 import {ButtonComponent} from '~tpt/shared/component/button/button/button.component';
 import {InputComponent} from '~tpt/shared/component/form/input/input.component';
 import {TextareaComponent} from '~tpt/shared/component/form/textarea/textarea.component';
@@ -41,7 +42,22 @@ import {TextareaComponent} from '~tpt/shared/component/form/textarea/textarea.co
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss'
 })
-export class ContactFormComponent extends FormComponent<ContactForm> {
+export class ContactFormComponent extends FormComponent<ContactForm> implements OnChanges {
+  /**
+   * Result of submitting the form.
+   *
+   * @public
+   * @type {boolean | null}
+   */
+  @Input()
+  public submitResult: boolean | null = null;
+
+  /**
+   * `RecaptchaComponent` child component.
+   *
+   * @public
+   * @type {?RecaptchaComponent}
+   */
   @ViewChild('recaptcha')
   public recaptcha?: RecaptchaComponent;
 
@@ -56,6 +72,16 @@ export class ContactFormComponent extends FormComponent<ContactForm> {
     demo: 'Vorrei richiedere una demo!',
     lavoro: 'Vorrei entrare a far parte del team!'
   };
+
+  /**
+   * @inheritdoc
+   */
+  public override ngOnChanges(changes: TypedChanges<ContactFormComponent>): void {
+    super.ngOnChanges(changes);
+    if (changes.submitResult && changes.submitResult.currentValue) {
+      this.reset();
+    }
+  }
 
   /**
    * Error parser for email errors.
@@ -89,7 +115,6 @@ export class ContactFormComponent extends FormComponent<ContactForm> {
   public onResolved(response: string | null) {
     if (response) {
       this.emitSubmit();
-      this.reset();
     }
   }
 

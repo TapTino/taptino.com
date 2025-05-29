@@ -1,8 +1,10 @@
 import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
+import {Store} from '@ngrx/store';
 import {catchError, map, of, switchMap} from 'rxjs';
 
-import {sendContactData} from './actions';
+import {saveContactPostResult, sendContactData} from './actions';
+import {State} from './feature';
 import {ContactService} from '../service/contact.service';
 
 /**
@@ -17,11 +19,11 @@ export class HomeEffects {
   /**
    * Intercepts the action {@link sendContactData} to send the contact data to save,
    * calls {@link ContactService.postContactData postContactData} to post it,
-   * then logs the response.
+   * then emits the action {@link saveContactPostResult} to save the outcome.
    *
    * @public
    * @readonly
-   * @type {*}
+   * @type {TypedAction<"[Home] Save contact post result">}
    */
   public readonly sendContactData$ = createEffect(() => this.actions$.pipe(
     ofType(sendContactData),
@@ -29,16 +31,20 @@ export class HomeEffects {
       ...data,
       timestamp: new Date()
     }).pipe(
-      map(response => console.log(response)),
-      catchError(error => of(console.log(error)))
+      map(response => {
+        console.log(response);
+        return saveContactPostResult({contactPostResult: !!response});
+      }),
+      catchError(() => of(saveContactPostResult({contactPostResult: false})))
     ))
-  ), {dispatch: false});
+  ));
 
   /**
    * @constructor
    * @public
    * @param {Actions} actions$
+   * @param {Store<State>} store$
    * @param {ContactService} contactService
    */
-  public constructor(private readonly actions$: Actions, private readonly contactService: ContactService) {}
+  public constructor(private readonly actions$: Actions, private readonly store$: Store<State>, private readonly contactService: ContactService) {}
 }

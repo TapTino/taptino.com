@@ -1,4 +1,4 @@
-import{h as x}from"./chunk-BJCR4PLT.js";import{a as f}from"./chunk-FP4F3AKD.js";import{Y as u}from"./chunk-AZFJKHKB.js";import"./chunk-543JV44P.js";import{k as d,l as g,o as h}from"./chunk-DFSPCKIU.js";import{Fb as t,Gb as n,Hb as p,Nb as c,Zb as e,dc as l,kb as s,pa as m}from"./chunk-AYJ33JAE.js";var z=(()=>{let i=class i{get route(){return this.router.url.slice(1)}constructor(a,o){this.store$=a,this.router=o}openIssue(){this.store$.dispatch(x({title:"Errore 404 durante la navigazione",body:`Buongiorno,
+import{h as x}from"./chunk-DK326FG4.js";import{a as f}from"./chunk-ZNDUV4G2.js";import{Y as u}from"./chunk-XOQN7OJJ.js";import"./chunk-543JV44P.js";import{k as d,l as g,o as h}from"./chunk-GSS7XS5K.js";import{Fb as t,Gb as n,Hb as p,Nb as c,Zb as e,ec as l,kb as s,pa as m}from"./chunk-KTFK3KGL.js";var z=(()=>{let i=class i{get route(){return this.router.url.slice(1)}constructor(a,o){this.store$=a,this.router=o}openIssue(){this.store$.dispatch(x({title:"Errore 404 durante la navigazione",body:`Buongiorno,
 
 Stavo cercando di visitare la pagina https://taptino.com/#/${this.route}, ma viene invece mostrata la pagina di 404.
 

@@ -1,8 +1,10 @@
 import {Routes} from '@angular/router';
 import {provideEffects} from '@ngrx/effects';
+import {provideState} from '@ngrx/store';
 
 import {ROUTE} from './core/model/route.enum';
 import {HomeEffects} from './feature/home/redux/effects';
+import {homeFeature} from './feature/home/redux/feature';
 import {ContactService} from './feature/home/service/contact.service';
 
 /**
@@ -14,7 +16,7 @@ export const ROOT_ROUTES: Routes = [
   {
     path: ROUTE.HOME,
     loadComponent: () => import('~tpt/feature/home/home.component').then(m => m.HomeComponent),
-    providers: [provideEffects(HomeEffects), ContactService]
+    providers: [provideState(homeFeature), provideEffects(HomeEffects), ContactService]
   },
   {
     path: ROUTE.NEWSLETTER,

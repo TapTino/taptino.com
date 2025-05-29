@@ -1,3 +1,4 @@
+import {AsyncPipe} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {Component} from '@angular/core';
 import {RouterModule} from '@angular/router';
@@ -6,9 +7,8 @@ import {Store} from '@ngrx/store';
 import {ContactFormComponent} from './component/contact-form/contact-form.component';
 import {ContactForm} from './model/contact-form.interface';
 import {sendContactData} from './redux/actions';
+import {homeFeature, State} from './redux/feature';
 import {ContactService} from './service/contact.service';
-
-import {State} from '~tpt/core/redux/feature';
 
 /**
  * Homepage.
@@ -20,12 +20,26 @@ import {State} from '~tpt/core/redux/feature';
 @Component({
   selector: 'tpt-home',
   standalone: true,
-  imports: [RouterModule, ContactFormComponent, HttpClientModule],
+  imports: [
+    RouterModule,
+    HttpClientModule,
+    ContactFormComponent,
+    AsyncPipe
+  ],
   providers: [ContactService],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  /**
+   * Result of posting the contact result form.
+   *
+   * @public
+   * @readonly
+   * @type {Observable<boolean | null>}
+   */
+  public readonly contactPostResult$ = this.store$.select(homeFeature.selectContactPostResult);
+
   /**
    * @constructor
    * @public

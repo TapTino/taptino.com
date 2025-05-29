@@ -33,5 +33,18 @@ export class SnackBarComponent {
    * @public
    * @param {HttpErrorResponse} data
    */
-  public constructor(@Inject(MAT_SNACK_BAR_DATA) public readonly data: HttpErrorResponse) {}
+  public constructor(@Inject(MAT_SNACK_BAR_DATA) public readonly data: HttpErrorResponse) {
+    console.log(data);
+  }
+
+  /**
+   * Checks whether the given error is a string.
+   *
+   * @public
+   * @param {unknown} error error to check.
+   * @returns {boolean} whether the error is a plain string.
+   */
+  public checkDisplayError(error: unknown): boolean {
+    return typeof error === 'string';
+  }
 }
