@@ -1,15 +1,15 @@
 {
-  "name": "TapTino",
+  "name": "TapTino: uno strumento terapeutico divertente ed efficace!",
   "short_name": "TapTino",
   "description": "Uno strumento terapeutico divertente ed efficace!\nCreiamo soluzioni pratiche, creative e innovative per la vita ADHD!\nAiutaci a supportare la ricerca!",
   "theme_color": "#473080",
   "background_color": "#473080",
-  "display": "fullscreen",
+  "display": "standalone",
   "start_url": "/",
   "scope": "/",
   "shortcuts": [
     {
-      "name": "Newletter",
+      "name": "Newletter: tieniti aggiornato!",
       "short_name": "Newsletter",
       "description": "Scopri le ultime novità!",
       "url": "/#/newsletter"
