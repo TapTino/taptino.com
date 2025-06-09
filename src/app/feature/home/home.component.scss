@@ -40,19 +40,19 @@
         font-weight: 600;
         color: #fff;
         text-shadow:
-          -4px -4px 0 #e87e0c,
-          4px -4px 0 #e87e0c,
-          -4px 4px 0 #e87e0c,
-          4px 4px 0 #e87e0c,
-          0px -4px 0 #e87e0c,
-          0px 4px 0 #e87e0c,
-          -4px 0px 0 #e87e0c,
-          4px 0px 0 #e87e0c;
+          -4px -4px 0 #ff6b0f,
+          4px -4px 0 #ff6b0f,
+          -4px 4px 0 #ff6b0f,
+          4px 4px 0 #ff6b0f,
+          0px -4px 0 #ff6b0f,
+          0px 4px 0 #ff6b0f,
+          -4px 0px 0 #ff6b0f,
+          4px 0px 0 #ff6b0f;
       }
 
       > .exposition {
         flex-grow: 1;
-        background: url("assets/images/device1.png");
+        background: url("assets/images/device.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
