@@ -12,7 +12,20 @@
       "name": "Newletter: tieniti aggiornato!",
       "short_name": "Newsletter",
       "description": "Scopri le ultime novità!",
-      "url": "/#/newsletter"
+      "url": "/#/newsletter",
+      "icons": [
+        {
+          "src": "favicon/newsletter/maskable.png",
+          "type": "image/png",
+          "sizes": "512x512",
+          "purpose": "maskable"
+        },
+        {
+          "src": "favicon/newsletter/icon.png",
+          "type": "image/png",
+          "sizes": "512x512"
+        }
+      ]
     }
   ],
   "icons": [
