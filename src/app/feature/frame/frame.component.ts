@@ -90,7 +90,7 @@ export class FrameComponent extends SubscriberComponent {
    */
   public constructor(private readonly store$: Store<State>, private readonly router: Router, private readonly title: Title, private readonly snackBar: MatSnackBar) {
     super();
-    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(event => this.setTitle((event as NavigationEnd).urlAfterRedirects.slice(1).split('#')[0]!));
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(event => this.setTitle((event as NavigationEnd).urlAfterRedirects.slice(1).split('#')[0]));
     this.error$.pipe(filter(error => !!error), this.takeUntil()).subscribe(error => this.snackBar.openFromComponent(SnackBarComponent, {data: error}).onAction().pipe(this.takeUntil()).subscribe(() => this.store$.dispatch(openIssue({
       title: `${error!.status} HTTP error`,
       body: `Buongiorno,\n\nSi è presentato il seguente errore:\n\`\`\`json\n${JSON.stringify(error, null, 2)}\n\`\`\`\nQuesto errore si è verificato quando ___\n\nGrazie per il vostro tempo`
@@ -103,17 +103,22 @@ export class FrameComponent extends SubscriberComponent {
    * @private
    * @param {string} route
    */
-  private setTitle(route: string) {
-    switch (route) {
-      case ROUTE.HOME:
-        this.title.setTitle('TapTino');
-        break;
-      case ROUTE.NEWSLETTER:
-        this.title.setTitle('Newsletter - TapTino');
-        break;
-      default:
-        this.title.setTitle('404 - TapTino');
-        break;
+  private setTitle(route?: string) {
+    if (route && route.startsWith(ROUTE.NEWSLETTER) && !route.endsWith(ROUTE.NEWSLETTER)) {
+      // TODO: Change page title with the actual news title.
+      this.title.setTitle('iBicocca Pitch Day - TapTino');
+    } else {
+      switch (route) {
+        case ROUTE.HOME:
+          this.title.setTitle('TapTino');
+          break;
+        case ROUTE.NEWSLETTER:
+          this.title.setTitle('Newsletter - TapTino');
+          break;
+        default:
+          this.title.setTitle('404 - TapTino');
+          break;
+      }
     }
     this.activeRoute = isValidRoute(route) ? route as ROUTE : ROUTE.HOME;
   }

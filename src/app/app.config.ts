@@ -10,6 +10,7 @@ import {provideEffects} from '@ngrx/effects';
 import {provideState, provideStore} from '@ngrx/store';
 import {environment} from 'environments/environment';
 import {RECAPTCHA_SETTINGS, RECAPTCHA_V3_SITE_KEY} from 'ng-recaptcha';
+import {MARKED_OPTIONS, provideMarkdown} from 'ngx-markdown';
 
 import {ROOT_ROUTES} from './app.routes';
 import {CoreEffects} from './core/redux/effects';
@@ -33,6 +34,15 @@ export const appConfig: ApplicationConfig = {
       anchorScrolling: 'enabled'
     })),
     provideAnimationsAsync(),
+    provideMarkdown({
+      markedOptions: {
+        provide: MARKED_OPTIONS,
+        useValue: {
+          gfm: true,
+          breaks: false
+        }
+      }
+    }),
     {
       provide: MAT_RIPPLE_GLOBAL_OPTIONS,
       useValue: {

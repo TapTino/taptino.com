@@ -1,0 +1,30 @@
+{
+  "title": "TapTino News Test",
+  "subtitle": "Questo è un test per vedere come appare avere più di una notizia",
+  "surtitle": "Questo è un test per vedere come appare avere più di una notizia",
+  "preview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, urna ac venenatis mollis, mauris eros placerat elit, sit amet mollis orci turpis quis dui. Donec rhoncus urna nibh, ut mollis metus sodales eu. Mauris est lectus, fermentum vitae dictum non, euismod at tellus. Donec eget ex congue, dapibus sapien sit amet, hendrerit purus. Aenean lorem nibh, viverra sed tortor quis, tristique aliquam ex. Morbi ac metus et nulla ullamcorper tempor non ac arcu.",
+  "image": "logo.svg",
+  "date": [2025, 3, 15],
+  "sections": [
+    {
+      "title": "Sezione 1",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, urna ac venenatis mollis, mauris eros placerat elit, sit amet mollis orci turpis quis dui. Donec rhoncus urna nibh, ut mollis metus sodales eu. Mauris est lectus, fermentum vitae dictum non, euismod at tellus. Donec eget ex congue, dapibus sapien sit amet, hendrerit purus. Aenean lorem nibh, viverra sed tortor quis, tristique aliquam ex. Morbi ac metus et nulla ullamcorper tempor non ac arcu.",
+      "images": ["logo.svg"]
+    },
+    {
+      "title": "Sezione 2",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, urna ac venenatis mollis, mauris eros placerat elit, sit amet mollis orci turpis quis dui. Donec rhoncus urna nibh, ut mollis metus sodales eu. Mauris est lectus, fermentum vitae dictum non, euismod at tellus. Donec eget ex congue, dapibus sapien sit amet, hendrerit purus. Aenean lorem nibh, viverra sed tortor quis, tristique aliquam ex. Morbi ac metus et nulla ullamcorper tempor non ac arcu.",
+      "images": ["logo.svg"]
+    },
+    {
+      "title": "Sezione 3",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, urna ac venenatis mollis, mauris eros placerat elit, sit amet mollis orci turpis quis dui. Donec rhoncus urna nibh, ut mollis metus sodales eu. Mauris est lectus, fermentum vitae dictum non, euismod at tellus. Donec eget ex congue, dapibus sapien sit amet, hendrerit purus. Aenean lorem nibh, viverra sed tortor quis, tristique aliquam ex. Morbi ac metus et nulla ullamcorper tempor non ac arcu.",
+      "images": ["logo.svg"]
+    },
+    {
+      "title": "Sezione 4",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean placerat, urna ac venenatis mollis, mauris eros placerat elit, sit amet mollis orci turpis quis dui. Donec rhoncus urna nibh, ut mollis metus sodales eu. Mauris est lectus, fermentum vitae dictum non, euismod at tellus. Donec eget ex congue, dapibus sapien sit amet, hendrerit purus. Aenean lorem nibh, viverra sed tortor quis, tristique aliquam ex. Morbi ac metus et nulla ullamcorper tempor non ac arcu.",
+      "images": ["logo.svg", "logo.svg", "logo.svg", "logo.svg", "logo.svg"]
+    }
+  ]
+}

@@ -1,6 +1,8 @@
 @use "@angular/material" as material;
 @import "variables", "grids";
 @import "override/button", "override/card", "override/checkbox", "override/divider", "override/input", "override/menu", "override/select", "override/snackbar", "override/toggle";
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
 
 * {
   box-sizing: border-box;
@@ -33,7 +35,7 @@ p {
 
 ul,
 ol {
-  list-style-position: outside;
+  list-style-position: inside;
 }
 
 a {

@@ -1,3 +1,5 @@
 <section>
-  <tpt-news-card img="assets/images/pitch-day/award-preview.jpeg" preview="TapTino esiste con la volontà, la speranza e l'ambizione di essere, ora come in futuro, un cuore pulsante di scientificità applicata con tutti e per tutti. Racconta il passato, il presente e il futuro di tre ragazzi che cercano di cambiare le regole del gioco, stanchi di una scienza che tradisce i suoi principi, troppo teorica, costosa e lontana dalle persone." subtitle="Un'esperienza, un viaggio, in cui il nostro team ha avuto l'opportunità di mettersi in discussione, di crescere e di migliorarsi!" title="iBicocca Pitch Day" [date]="pitchDayDate" />
+  @for (item of news; track $index) {
+    <tpt-news-card [date]="item[1].date" [img]="'assets/news/' + item[0] + '/' + item[1].image" [preview]="item[1].preview" [slug]="item[0]" [subtitle]="item[1].surtitle" [title]="item[1].title" />
+  }
 </section>

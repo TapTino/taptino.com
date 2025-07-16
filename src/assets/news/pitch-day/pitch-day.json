@@ -1,0 +1,35 @@
+{
+  "title": "iBicocca Pitch Day",
+  "subtitle": "Chiusura del percorso “Titanium” di iBicocca e Università degli Studi di Milano-Bicocca",
+  "surtitle": "Un'esperienza, un viaggio, in cui il nostro team ha avuto l'opportunità di mettersi in discussione, di crescere e di migliorarsi!",
+  "preview": "TapTino esiste con la volontà, la speranza e l'ambizione di essere, ora come in futuro, un cuore pulsante di scientificità applicata con tutti e per tutti. Racconta il passato, il presente e il futuro di tre ragazzi che cercano di cambiare le regole del gioco, stanchi di una scienza che tradisce i suoi principi, troppo teorica, costosa e lontana dalle persone.",
+  "image": "award-preview.jpeg",
+  "date": [2025, 5, 13],
+  "sections": [
+    {
+      "title": "Cosa è successo",
+      "content": "Il **Pitch Day** ha segnato la tappa conclusiva di *Titanium*, il programma di accelerazione che in questi mesi ha accompagnato dieci progetti ad alto impatto sociale e tecnologico.\n\nTra i team protagonisti c'è *TapTino*, presentato da **Alessio Di Nunzio**, **Anna Lambiase** e **Guido Luigi Maria Regina**.",
+      "images": ["presentation.jpeg"]
+    },
+    {
+      "title": "La soluzione premiata: TapTino",
+      "content": "**Che cos'è?**  \nIl primo dispositivo terapeutico dotato di tastiera interattiva e app mobile pensato per sostenere genitori, educatori e clinici nella cura dei bambini e delle bambine con Disturbo da Deficit di Attenzione e Iperattività (ADHD).\n\n**Come funziona?**  \nSfrutta il finger tapping, un movimento naturale e coinvolgente, per ridurre l'iperattività e potenziare l'attenzione.\n\n**Perché conta?**  \nUnisce rigore scientifico, costi accessibili e semplicità d'uso, offrendo un supporto costante “in punta di dita”.",
+      "images": ["showcase.jpeg"]
+    },
+    {
+      "title": "Impatto e prospettive",
+      "content": "TapTino nasce con l'ambizione di tradurre la ricerca scientifica in uno strumento concreto, vicino alle famiglie e ai professionisti, per migliorare la qualità della vita dei minori con ADHD.\n\nIl team proseguirà ora con:\n- Validazione clinica in collaborazione con centri specializzati.\n- Industrializzazione del dispositivo per ottimizzarne produzione e distribuzione.\n- Raccolta fondi mirata a scalare il progetto e ampliare l'offerta di servizi digitali di supporto.",
+      "images": []
+    },
+    {
+      "title": "Un grazie speciale",
+      "content": "A **Francesco Ehrenheim** e **Francesca Postiglione**, ai mentor di **iBicocca** e **weBeetle**, ai compagni di percorso e agli investitori che hanno creduto nella visione di TapTino!",
+      "images": ["listening.jpeg", "award.jpeg"]
+    },
+    {
+      "title": "Vuoi saperne di più o entrare in contatto con il team?",
+      "content": "Iscriviti alla nostra newsletter oppure visita il [nostro sito](/) per tutti i dettagli!",
+      "images": []
+    }
+  ]
+}

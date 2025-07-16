@@ -23,6 +23,10 @@ export const ROOT_ROUTES: Routes = [
     loadComponent: () => import('~tpt/feature/news/news.component').then(m => m.NewsletterComponent)
   },
   {
+    path: ROUTE.NEWS,
+    loadComponent: () => import('~tpt/feature/news/component/news-page/news-page.component').then(m => m.NewsPageComponent)
+  },
+  {
     path: '**',
     loadComponent: () => import('~tpt/feature/error/error.component').then(m => m.ErrorComponent)
   }

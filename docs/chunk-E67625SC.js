@@ -1,0 +1,1 @@
+import{ba as i,j as e,wa as r}from"./chunk-5GI4CRB7.js";var u=(()=>{class t{constructor(){this.subject$=new e}ngOnDestroy(){this.subject$.next(),this.subject$.complete()}takeUntil(){return i(this.subject$)}static{this.\u0275fac=function(s){return new(s||t)}}static{this.\u0275dir=r({type:t})}}return t})();export{u as a};

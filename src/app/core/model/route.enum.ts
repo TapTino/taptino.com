@@ -6,7 +6,8 @@
  */
 export enum ROUTE {
   HOME = '',
-  NEWSLETTER = 'newsletter'
+  NEWSLETTER = 'newsletter',
+  NEWS = 'newsletter/:slug'
 }
 
 /**
@@ -16,6 +17,6 @@ export enum ROUTE {
  * @param {string} route
  * @returns {route is ROUTE}
  */
-export function isValidRoute(route: string): route is ROUTE {
+export function isValidRoute(route?: string): route is ROUTE {
   return Object.values(ROUTE).includes(route as ROUTE);
 }

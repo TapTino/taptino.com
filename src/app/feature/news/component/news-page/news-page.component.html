@@ -1,1 +1,34 @@
-Title Section
+<section class="news-page">
+  @if (news) {
+    <header class="news-header">
+      <h1 class="title">{{ news.title }}</h1>
+      <time class="date" [attr.datetime]="getDate(news.date) | date: 'dd-MM-yyyy'">
+        {{ getDate(news.date) | date: "dd/MM/yyyy" }}
+      </time>
+    </header>
+
+    <h2 class="subtitle">{{ news.subtitle }}</h2>
+
+    @for (section of news.sections; track $index) {
+      <section class="news-section" [class.left]="section.images.length === 1 && getAlignment($index) === 'left'" [class.right]="section.images.length === 1 && getAlignment($index) === 'right'" [class.single-image]="section.images.length === 1">
+        @if (section.images.length === 1) {
+          <img [alt]="section.title" [src]="getImage(section.images[0]!)" />
+          <div class="text">
+            <h2>{{ section.title }}</h2>
+            <markdown [data]="section.content" />
+          </div>
+        } @else {
+          <h2>{{ section.title }}</h2>
+          <markdown [data]="section.content" />
+          @if (section.images.length) {
+            <p-carousel styleClass="carousel" [circular]="true" [numVisible]="1" [showIndicators]="false" [value]="getImages(section.images)">
+              <ng-template let-item pTemplate="item">
+                <img [alt]="section.title" [src]="item" />
+              </ng-template>
+            </p-carousel>
+          }
+        }
+      </section>
+    }
+  }
+</section>
