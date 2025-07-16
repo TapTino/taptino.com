@@ -1,6 +1,7 @@
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {Component, OnInit} from '@angular/core';
 import {RouterModule} from '@angular/router';
+import {forkJoin, map} from 'rxjs';
 
 import {NewsCardComponent} from './component/news-card/news-card.component';
 import {News} from './model/news.type';
@@ -22,8 +23,6 @@ import {SubscriberComponent} from '~tpt/core/abstract/subscriber.component';
   styleUrl: './news.component.scss'
 })
 export class NewsletterComponent extends SubscriberComponent implements OnInit {
-  public readonly pitchDayDate = new Date(2025, 5, 13);
-
   private readonly slugs = ['pitch-day', 'test'];
 
   public news: [string, News][] = [];
@@ -33,10 +32,8 @@ export class NewsletterComponent extends SubscriberComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    for (const slug of this.slugs) {
-      this.http.get<News>(`assets/news/${slug}/${slug}.json`).pipe(this.takeUntil()).subscribe(news => {
-        this.news.push([slug, news]);
-      });
-    }
+    forkJoin(this.slugs.map(slug => this.http.get<News>(`assets/news/${slug}/${slug}.json`).pipe(map(news => [slug, news] as [string, News]))))
+      .pipe(map(results => results.sort((a, b) => new Date(b[1].date[0], b[1].date[1], b[1].date[2]).getTime() - new Date(a[1].date[0], a[1].date[1], a[1].date[2]).getTime())))
+      .subscribe(sorted => (this.news = sorted));
   }
 }
