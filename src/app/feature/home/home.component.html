@@ -28,17 +28,27 @@
     </div>
   </section>
   <section class="tpt-grid tpt-contacts-section">
-    <div class="tpt-cell-6">
-      <span class="title">Chi siamo?</span>
-      <span>Tutto per creare soluzioni innovative che migliorino la vita delle persone.</span>
-      <br />
-      <span>Per noi innovare significa prendersi cura: con la mente, la tecnologia giusta e un obiettivo chiaro.</span>
-      <br />
-      <span>Aiutaci a supportare la ricerca!</span>
-    </div>
-    <div class="tpt-cell-6">
-      <span class="title">Contattaci se sei interessato a collaborare con noi o richiedere una demo!</span>
-      <tpt-contact-form [submitResult]="contactPostResult$ | async" (onSubmit)="handleSubmit($event)" />
+   <div class="tpt-cell-6">
+  <span class="title">Chi siamo?</span>
+  <span>
+    Siamo tre studenti di Bicocca che hanno deciso di lanciarsi nel mondo delle startup con TapTino!
+  </span>
+  <br />
+  <span>
+    Dopo aver partecipato al percorso iBicocca che ci ha portato a presentare il nostro progetto davanti a numerosi investitori, parteciperemo a BiUniCrowd, un percorso che ci porterà a capire come lanciare una campagna di crowdfunding per finanziare il nostro progetto.
+  </span>
+  <br />
+  <span>Aiutaci a supportare la ricerca!</span>
+</div>
+
+<div class="tpt-cell-6">
+  <span class="title">Contattaci se sei interessato a collaborare con noi o richiedere una demo!</span>
+  <tpt-contact-form
+    [submitResult]="contactPostResult$ | async"
+    (onSubmit)="handleSubmit($event)"
+  />
+</div>
+
     </div>
   </section>
 </section>
